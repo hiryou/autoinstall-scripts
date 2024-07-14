@@ -9,7 +9,7 @@ BRC_PATCH="${2:-/tmp/bashrc.pyenv}"
 dpkg --configure -a
 
 apt-get update
-apt install -y curl git-core gcc make zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libssl-dev
+apt install -y curl git-core gcc make zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libssl-dev liblzma-dev libffi-dev
 echo '----------------------------------------------------------------------------'
 
 curl https://pyenv.run | bash
