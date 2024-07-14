@@ -5,6 +5,7 @@
 
 USER="${1:-hadoop}"
 BRC_PATCH="${2:-/tmp/bashrc.pyenv}"
+PIP_REQS="${3:-/tmp/requirements.txt}"
 
 dpkg --configure -a
 
@@ -23,4 +24,9 @@ sudo -H -u $USER /home/$USER/.pyenv/bin/pyenv versions
 sudo -H -u $USER /home/$USER/.pyenv/bin/pyenv global 3.12.4
 # in bashrc file
 sudo -H -u $USER cat $BRC_PATCH >> /home/$USER/.bashrc
+echo '----------------------------------------------------------------------------'
+
+# basic pip pkgs
+sudo -H -u $USER /home/$USER/.pyenv/shims/python -m pip install -r $PIP_REQS
+echo '----------------------------------------------------------------------------'
 
